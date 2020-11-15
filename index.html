@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V Care</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+      :root{
+        --bg : #e8f4fa;
+        --font : 'Goldman',cursive;
+      }
+        body{
+          font-family: var(--font);
+        }
         .navbar{
             font-family: 'Goldman',cursive;
             color: #285f90 !important;
+            font-size: 14px;
         }
         .carousel-control-next-icon{
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%0' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
@@ -20,18 +29,97 @@
         .carousel-indicators li{
             background-color: black ;
         }
-        .carousel-indicators{
-           margin: 0%;
+        .carousel-inner img{
+          width: 100%;
+          max-height: 550px !important;
         }
+        #mobile-navbar{
+          display: none;
+	        top: 0;
+          background-color: var(--bg);
+        }
+        @media (max-width: 992px){
+	#mobile-navbar{
+	display: block;
+}
+#normal-navbar{
+	display: none;
+}
+#map{
+  width: 200 !important;
+  height: 150 !important;
+}
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
     </style>
 </head>
 <body>
-    <div id="normal-nav" class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-expand-xl" style="background-color: #e8f4fa;">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#sevices">Services</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+	<div class="nav navbar-expand" id="mobile-navbar">
+		<div class="row">
+			<div class="col-10 col-sm-11">
+				<div class="navbar-brand">
+          <img src="./vcarelogo.jpeg" alt="V Care" width="35%">
+				</div>
+			</div>
+			<div class="col-1 col-sm-1" style="text-align: center; background-color: var(--bg); align-items: center; justify-content: center; margin-top: 1%;">
+				<span style="font-size: 25px;" onclick="openNav();">&#9776;</span>
+			</div>
+		</div>
+	</div>
+
+
+
+    <div id="normal-navbar" class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-expand-xl" style="background-color: var(--bg);">
         <div class="row" style="width: 100%;">
             <div class="col-lg-8">
                 <div class="container" style="margin-left: 5%;">
 					<div class="navbar-brand">
-                        <img src="./vcarelogo.jpeg" alt="V Care" width="50%">
+                        <img src="./vcarelogo.jpeg" alt="V Care" width="35%">
 				</div>
 				</div>
             </div>
@@ -43,13 +131,13 @@
 							<a class="nav-link" href="#" style="font-weight: bold;">Home</a>
 						  </li>
 						  <li class="nav-item">
-							<a class="nav-link" href="#" style="font-weight: bold;">About</a>
+							<a class="nav-link" href="#about" style="font-weight: bold;">About</a>
                           </li>
 						  <li class="nav-item">
-							<a class="nav-link" href="#" style="font-weight: bold;">Services</a>
+							<a class="nav-link" href="#services" style="font-weight: bold;">Services</a>
 						  </li>
 						  <li class="nav-item">
-							  <a href="#" class="nav-link" style="font-weight: bold;">Contact Us</a>
+							  <a href="#contact" class="nav-link" style="font-weight: bold;">Contact</a>
 						  </li>
 						</ul>
 					  </div>
@@ -57,42 +145,242 @@
             </div>
         </div>
     </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <!-- <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol> -->
-        <div class="container">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-          </div>  
-        <div class="carousel-inner" style="text-align: center;">
-          <div class="carousel-item active">
-            <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" style="width: 50%" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" style="width: 50%;" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" style="width: 50%;" alt="...">
+
+  
+<div class="container-width">
+  
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item">
+          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div> -->
+        </div>
+        <div class="carousel-item">
+          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
       </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+</div>
+<hr id="about" style="color: #111; border: 2px solid black;">
+<div  class="container-width">
+  <h2 style="text-align: center;">About Us</h2><br>
+  <div class="row">
+    <div class="col-sm-6 col-12">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ab dicta id ipsa totam deserunt aut cum dignissimos tempore, omnis quae vitae quod itaque molestias, nostrum dolorum corrupti nesciunt sunt!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eos quaerat consequatur? Fugit quo similique, dolor officia quas voluptates iusto, ipsam aliquam cupiditate dolore odio mollitia voluptate, magni expedita dicta!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae labore dolore laborum cum amet libero eos corporis dolor autem. Ullam aspernatur delectus architecto aliquid enim labore rerum doloremque repellendus cupiditate.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum incidunt nam voluptates ut nobis. Aut ipsum repudiandae sequi, exercitationem sunt aliquid repellat similique quasi quos dolor nesciunt. Iusto, animi quaerat.   
+    </div>
+    <div class="col-sm-6 col-12">
+      <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" alt="" width="100%">
+    </div>
+  </div>
+</div>
+<hr id="services" style="color: #111; border: 2px solid black;">
+<div class="container-width">
+  <h2 style="text-align: center;">Services</h2><br>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-4">
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr id="contact" style="color: #111; border: 2px solid black;">
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div style="background-color: var(--bg);">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>Bodana, Karjan, Gujarat 391220</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> 0265 623 3030</p>
+
+
+      </div>
+      <!-- Grid column -->
+
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Link 1</a>
+        </p>
+        <p>
+          <a href="#!">Link 2</a>
+        </p>
+        <p>
+          <a href="#!">Link 3</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <div class="col-md-4 col-5">
+<div class="container-width">
+  <!--Google map-->
+<div id="map-container-google-2" class="z-depth-1-half map-container">
+  <!-- <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe> -->
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14791.879326767217!2d73.1292218!3d22.0507495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x592c0042f2b4f3f4!2sV%20Care%20Multi%20speciality%20hospital!5e0!3m2!1sen!2sin!4v1605423873904!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+<!--Google Maps-->
+</div>
+      </div>
+
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    Developed with 
+				   <i class="far fa-heart" style="color: red;" aria-hidden="true"></i> by 
+				   <a href="https://sleeksites.in/" target="_blank" style="color:royalblue; text-decoration: none;">SleekSites</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
   
-
-
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
