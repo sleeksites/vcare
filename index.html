@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+    
     <style>
       :root{
         --bg : #e8f4fa;
         --font : 'Goldman',cursive;
       }
         body{
-          font-family: var(--font);
+          /* font-family: var(--font); */
+          overflow-x: hidden;
         }
         .navbar{
-            font-family: 'Goldman',cursive;
             color: #285f90 !important;
             font-size: 14px;
         }
@@ -93,10 +94,10 @@
 <body>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#sevices">Services</a>
-    <a href="#contact">Contact Us</a>
+    <a href="#" onclick="closeNav()">Home</a>
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#services" onclick="closeNav()">Services</a>
+    <a href="#contact" onclick="closeNav()">Contact Us</a>
   </div>
 
 	<div class="nav navbar-expand" id="mobile-navbar">
@@ -189,9 +190,10 @@
     </div>
 
 </div>
-<hr id="about" style="color: #111; border: 2px solid black;">
+<hr id="about">
 <div  class="container-width">
   <h2 style="text-align: center;">About Us</h2><br>
+<div class="container">
   <div class="row">
     <div class="col-sm-6 col-12">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ab dicta id ipsa totam deserunt aut cum dignissimos tempore, omnis quae vitae quod itaque molestias, nostrum dolorum corrupti nesciunt sunt!
@@ -200,47 +202,48 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum incidunt nam voluptates ut nobis. Aut ipsum repudiandae sequi, exercitationem sunt aliquid repellat similique quasi quos dolor nesciunt. Iusto, animi quaerat.   
     </div>
     <div class="col-sm-6 col-12">
-      <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" alt="" width="100%">
+      <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" alt="" width="100%" style="border-radius: 16px;">
     </div>
   </div>
 </div>
-<hr id="services" style="color: #111; border: 2px solid black;">
+</div>
+<hr id="services">
 <div class="container-width">
   <h2 style="text-align: center;">Services</h2><br>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-4">
       <div class="col mb-4">
         <div class="card h-100">
-          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <img src="https://www.01webdirectory.com/blog/wp-content/uploads/2016/08/4204143304_284268fcb8_z.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Wards and Rooms</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100">
-          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <img src="https://hubble-live-assets.s3.amazonaws.com/autism-wessex/post/image/42/content_OGFB4B0.jpg" class="card-img-top" alt="..." height="38%">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a short card.</p>
+            <h5 class="card-title">Diagnosis</h5>
+            <p class="card-text">This is a short card.With supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100">
-          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <img src="https://www.thestatesman.com/wp-content/uploads/2019/11/AMBULANCE.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Ambulance</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100">
-          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="...">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="..." height="38%">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Pharmacy</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
@@ -248,7 +251,7 @@
     </div>
   </div>
 </div>
-<hr id="contact" style="color: #111; border: 2px solid black;">
+<hr id="contact">
 
 <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
@@ -381,7 +384,36 @@
     document.getElementById("mySidenav").style.width = "0";
   }
   </script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      // Add scrollspy to <body>
+      $('body').scrollspy({target: ".navbar", offset: 50});   
+    
+      // Add smooth scrolling on all links inside the navbar
+      $("#normal-navbar a").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        }  // End if
+      });
+    });
+    </script>
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
