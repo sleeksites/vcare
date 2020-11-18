@@ -1,449 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V Care</title>
+<title>Digital Service</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<!-- favicons -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom-responsive-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <style>
-      :root{
-        --bg : #e8f4fa;
-        --font : 'Goldman',cursive;
-      }
-      html{
-        overflow-x: hidden;
-      }
-        body{
-          /* font-family: var(--font); */
-          overflow-x: hidden;
-        }
-        .navbar{
-            color: #285f90 !important;
-            font-size: 14px;
-        }
-        .carousel-control-next-icon{
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%0' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
-        }
-        .carousel-control-prev-icon{
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%0' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e");
-        }
-        .carousel-indicators li{
-            background-color: black ;
-        }
-        .carousel-inner img{
-          width: 100%;
-          max-height: 550px !important;
-        }
-        #mobile-navbar{
-          display: none;
-	        top: 0;
-          background-color: var(--bg);
-        }
-        @media (max-width: 992px){
-	#mobile-navbar{
-	display: block;
-}
-#normal-navbar{
-	display: none;
-}
-#map{
-  width: 200 !important;
-  height: 150 !important;
-}
-}
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #262626;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: black;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-    </style>
+<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="scripts/plugin-active.js"></script>
 </head>
 <body>
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#" onclick="closeNav()">Home</a>
-    <a href="#about" onclick="closeNav()">About</a>
-    <a href="#services" onclick="closeNav()">Services</a>
-    <a href="#contact" onclick="closeNav()">Contact Us</a>
+  <header>
+    <div class="mobile-logo">
+    <a href=""><img src="images/vcarelogo.jpeg"></a>
   </div>
-
-	<div class="nav navbar-expand" id="mobile-navbar">
-		<div class="row">
-			<div class="col-10 col-sm-11">
-				<div class="navbar-brand">
-          <img src="./vcarelogo.jpeg" alt="V Care" width="35%">
-				</div>
-			</div>
-			<div class="col-1 col-sm-1" style="text-align: center; background-color: var(--bg); align-items: center; justify-content: center; margin-top: 1%;">
-				<span style="font-size: 25px;" onclick="openNav();">&#9776;</span>
-			</div>
-		</div>
-	</div>
-
-
-
-    <div id="normal-navbar" class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-expand-xl" style="background-color: var(--bg);">
-        <div class="row" style="width: 100%;">
-            <div class="col-lg-8">
-                <div class="container" style="margin-left: 5%;">
-					<div class="navbar-brand">
-                        <img src="./vcarelogo.jpeg" alt="V Care" width="35%">
-				</div>
-				</div>
-            </div>
-            <div class="col-lg-4">
-                <div class="container" style="margin-top: 2.5%; margin-left: 10%;">
-					<div class="" id="navbarNav">
-						<ul class="navbar-nav">
-						  <li class="nav-item">
-							<a class="nav-link" href="#" style="font-weight: bold;">Home</a>
-						  </li>
-						  <li class="nav-item">
-							<a class="nav-link" href="#about" style="font-weight: bold;">About</a>
-                          </li>
-						  <li class="nav-item">
-							<a class="nav-link" href="#services" style="font-weight: bold;">Services</a>
-						  </li>
-						  <li class="nav-item">
-							  <a href="#contact" class="nav-link" style="font-weight: bold;">Contact</a>
-						  </li>
-						</ul>
-					  </div>
-				</div>
-            </div>
-        </div>
-    </div>
-
-  
-<div class="container-width">
-  
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
-          <!-- <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div> -->
-        </div>
-        <div class="carousel-item">
-          <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-</div>
-<hr id="about">
-<div  class="container-width">
-  <h2 style="text-align: center;">About Us</h2><br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-12">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ab dicta id ipsa totam deserunt aut cum dignissimos tempore, omnis quae vitae quod itaque molestias, nostrum dolorum corrupti nesciunt sunt!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eos quaerat consequatur? Fugit quo similique, dolor officia quas voluptates iusto, ipsam aliquam cupiditate dolore odio mollitia voluptate, magni expedita dicta!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae labore dolore laborum cum amet libero eos corporis dolor autem. Ullam aspernatur delectus architecto aliquid enim labore rerum doloremque repellendus cupiditate.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum incidunt nam voluptates ut nobis. Aut ipsum repudiandae sequi, exercitationem sunt aliquid repellat similique quasi quos dolor nesciunt. Iusto, animi quaerat.   
-    </div>
-    <div class="col-sm-6 col-12">
-      <img src="https://d13g3ukwoycdvr.cloudfront.net/poster/Epi_2_HIYH_V-Care+Hospital+%2B+Poster.jpg" alt="" width="100%" style="border-radius: 16px;">
-    </div>
+  <a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="smooth-scroll" href="#Header"></a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Services">Our Services</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#OurWork">Our Work</a>
+      </li>
+      <!-- <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#OurBlog">Our Blog</a>
+      </li> -->
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Testimonials">Testimonials</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#map">Our Location</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  </header>
+<section id="Banner">
+  <div class="logo">
+    <img src="images/vcarelogo.jpeg">
   </div>
-</div>
-</div>
-<hr id="services">
-<div class="container-width">
-  <h2 style="text-align: center;">Services</h2><br>
+  <div class="blacksection">
+    <h1>V Care<br>Multi-Speciality<br>Hospital</h1>
+  </div>
+</section>
+<a href="#Services" class="mscroll"><img src="images/mouse-icon.png" alt="mouse icon"></a>
+<section id="Services">
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-4">
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="https://www.01webdirectory.com/blog/wp-content/uploads/2016/08/4204143304_284268fcb8_z.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Wards and Rooms</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+    <h2>Our services</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="each-services">
+          <img src="https://www.01webdirectory.com/blog/wp-content/uploads/2016/08/4204143304_284268fcb8_z.jpg" alt="Services">
+          <h3>Wards and Rooms</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A corporis laudantium, vel minus animi consequuntur ipsam nemo, fugit numquam, eius accusantium officiis vitae. Officia ipsa, dignissimos dolor velit obcaecati voluptatem</p>
         </div>
       </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="https://hubble-live-assets.s3.amazonaws.com/autism-wessex/post/image/42/content_OGFB4B0.jpg" class="card-img-top" alt="..." height="38%">
-          <div class="card-body">
-            <h5 class="card-title">Diagnosis</h5>
-            <p class="card-text">This is a short card.With supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="each-services">
+          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" alt="Services">
+          <h3>Pharmacy</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aliquam fuga dolorum inventore unde adipisci, iure numquam quos consectetur voluptatum reprehenderit quo suscipit? Sunt incidunt eveniet tenetur, fuga nesciunt labore.</p>
         </div>
       </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="https://www.thestatesman.com/wp-content/uploads/2019/11/AMBULANCE.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Ambulance</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="https://sgveh.com/wp-content/uploads/2019/12/Hospital-Affiliations-Small.jpg" class="card-img-top" alt="..." height="38%">
-          <div class="card-body">
-            <h5 class="card-title">Pharmacy</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="each-services">
+          <img src="https://hubble-live-assets.s3.amazonaws.com/autism-wessex/post/image/42/content_OGFB4B0.jpg" alt="Services">
+          <h3>Diagnosis</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolores delectus illo pariatur? Eveniet labore sequi sunt aliquid ipsum consequatur dolorem fuga. Ducimus dolores, possimus veritatis recusandae distinctio ratione beatae!</p>
         </div>
       </div>
     </div>
   </div>
+</section>
+<section id="OurWork">
+  <div class="container">
+    <h2>Our Work</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+        <div class="grey-box">
+          <img src="images/sponser.png" alt="Sponser">
+          <div class="sponser">
+            <h4>SPONSORS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+        <div class="each-work space">
+          <img src="images/bearbrand.jpg" alt="Bearbrand">
+        </div>
+         <div class="each-work">
+          <img src="images/designer.jpg" alt="Designer">
+        </div>
+        <div class="each-work space">
+          <img src="images/mountain.jpg" alt="Mountain">
+        </div>
+         <div class="each-work">
+          <img src="images/brandname.jpg" alt="Brandname">
+        </div>
+        <div class="each-work space">
+          <img src="images/stores.jpg" alt="Stores">
+        </div>
+         <div class="each-work">
+          <img src="images/hipster.jpg" alt="Hipster">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<!-- <section id="OurBlog"> 
+  <div class="container">
+    <h2>Our Blog</h2>
+    <p>A frequent, chronological publication of<br /> personal thoughts and Web links.</p>
+    <div class="blog-wrap">
+      <div class="each-block clearfix one"> 
+        <div class="icon">
+          <img src="images/blog-icon.png">
+        </div>
+        <div class="blog-intro"> 
+          <h3>Opening New Doors for..</h3>
+          <p>When a group of ambitious designers meet, you know something hot is brewing. Take a closer look and you’ll find them murmuring away..</p>
+        </div>
+      </div>
+      <div class="each-block clearfix two"> 
+        <div class="icon">
+          <img src="images/blog-icon.png">
+        </div>
+        <div class="blog-intro"> 
+          <h3>Is Your Content Strategy Playing..</h3>
+          <p>Compelling creative assets play a major role in the success of your Paid Customer Acquisition program..</p>
+        </div>
+      </div>
+      <div class="each-block clearfix three"> 
+        <div class="icon">
+          <img src="images/blog-icon.png">
+        </div>
+        <div class="blog-intro"> 
+          <h3>Glocalization Helps Small..</h3>
+          <p>At Position², we combine creative thinking and best practices for each channel to develop engaging and effective assets to enhance your brand.. </p>
+        </div>
+      </div>
+    </div>
+    <div class="learnmore">
+      <a href="Learnmore"><span>Learn more</span></a>
+    </div>
+  </div>
+</section> -->
+<section id="Testimonials">
+   <div class="container">
+    <h2>Testimonials</h2>
+    <p>I just wanted to take a moment to appreciate the great work you guys are doing for our web projects. Thanks for your abundant patience and technical support whenever required, even during the odd hours.</p>
+    <div class="testi-wrapper">
+        <div class="latest-testimonials each-testi">
+          <div class="division">
+            <span>03.</span> 
+            <div class="title">
+              <h4>Testimonials</h4>
+              <h6>Read our clients thoughts..</h6>
+            </div>
+          </div>
+          <p>You have surely made an impression with the awesome above!But, here is your chance to make the most of it. Display testimonials and boost your website conversions!</p>
+        </div>
+        <div class="old-testimonials each-testi">
+          <p>I'm thrilled with the new website that Position2 developed for Janrain to reflect our evolution into the leading provider of enterprise customer identity and access management solutions.</p>
+          <div class="profile">
+            <img src="images/user-profile-one.png" alt="">
+            <div class="designation">
+              <h6>Emma</h6>
+              <p>President and General Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="old-testimonials each-testi no-margin">
+          <p>From a metrics perspective, the amount of efficiency we've been able to wring from the Position2 PPC channel in the face of really interesting challenges has been phenomenal.</p>
+          <div class="profile">
+            <img src="images/user-profile-two.png" alt="">
+            <div class="designation">
+              <h6>Jeff</h6>
+              <p>Chief Commercial Officer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+</section>
+<section id="map" style="text-align: center;">
+<div class="container">
+  <h1>Our Location</h1>
+  <br>
+  <div id="map-container-google-2" class="z-depth-1-half map-container">
+    <!-- <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+      style="border:0" allowfullscreen></iframe> -->
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14791.879326767217!2d73.1292218!3d22.0507495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x592c0042f2b4f3f4!2sV%20Care%20Multi%20speciality%20hospital!5e0!3m2!1sen!2sin!4v1605423873904!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+  <br>
 </div>
-<hr id="contact">
-
-<!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
-
-  <div style="background-color: var(--bg);">
-    <div class="container">
-
-      <!-- Grid row-->
-      <div class="row py-4 d-flex align-items-center">
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Get connected with us on social networks!</h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f white-text mr-4"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter white-text mr-4"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram white-text"> </i>
-          </a>
-
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row-->
-
-    </div>
+</section>
+<footer id="Contact">
+  <div class="container">
+    <p>Contact Us</p>
+    <a href="#" class="email-btn"><span><i class="fa fa-envelope-o" aria-hidden="true"></i> Email Me</span></a>
+    <ul class="social-icons">
+      <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+    </ul>
   </div>
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5">
-
-    <!-- Grid row -->
-    <div class="row mt-3">
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fas fa-home mr-3"></i>Bodana, Karjan, Gujarat 391220</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i> 0265 623 3030</p>
-
-
-      </div>
-      <!-- Grid column -->
-
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-        <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">Link 1</a>
-        </p>
-        <p>
-          <a href="#!">Link 2</a>
-        </p>
-        <p>
-          <a href="#!">Link 3</a>
-        </p>
-      </div>
-      <!-- Grid column -->
-
-      <div class="col-md-4 col-5">
-        <div class="container-width">
-          <!--Google map-->
-        <div id="map-container-google-2" class="z-depth-1-half map-container">
-          <!-- <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-            style="border:0" allowfullscreen></iframe> -->
-            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14791.879326767217!2d73.1292218!3d22.0507495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x592c0042f2b4f3f4!2sV%20Care%20Multi%20speciality%20hospital!5e0!3m2!1sen!2sin!4v1605423873904!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-        
-        <!--Google Maps-->
-        </div>
-              </div>
-
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">
-    Developed with 
-				   <i class="far fa-heart" style="color: red;" aria-hidden="true"></i> by 
-				   <a href="https://sleeksites.in/" target="_blank" style="color:royalblue; text-decoration: none;">SleekSites</a>
-  </div>
-  <!-- Copyright -->
-
 </footer>
-<!-- Footer -->
-
-
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    // Add scrollspy to <body>
-    $('body').scrollspy({target: ".navbar", offset: 50});   
-  
-    // Add smooth scrolling on all links inside the navbar
-    $("#normal-navbar a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      }  // End if
-    });
-
-    // Add smooth scrolling on all links inside the navbar
-    $("#mySidenav a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-  
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      }  // End if
-    });
-
-  });
-  </script>
-
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+ <div class="copyright">
+  Developed with 
+  <i class="fa fa-heart" style="color: red;" aria-hidden="true"></i> by 
+  <a href="https://sleeksites.in/" target="_blank" style="color:royalblue; text-decoration: none;">SleekSites</a>
+</div>
 </body>
 </html>
