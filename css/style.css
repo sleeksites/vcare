@@ -63,7 +63,7 @@ ul, li {
 }
 body.active #Banner .logo {
 	opacity: 1;
-	top: 47%;
+	top: 40%;
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition-delay: 0.5s;

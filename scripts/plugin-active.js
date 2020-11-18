@@ -14,7 +14,7 @@ $(document).ready(function() {
       offset = parseInt($(target).offset().top),
       header = $(".sidebar-nav");
     dis.addClass("active").parent().siblings().find(".smooth-scroll").removeClass("active");
-    $('html,body').stop().animate({ scrollTop: offset }, 200);
+    $('html,body').stop().animate({ scrollTop: offset }, 1000);
   });
   // Closes responsive menu when a scroll trigger link is clicked
   $('#sidebar-wrapper').click(function() {
