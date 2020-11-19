@@ -26,17 +26,22 @@ $(document).ready(function() {
     $(window).on("load", function (e) {
 
       document.getElementById('loader').style.display = "block";
+      document.getElementById('hdr').style.display = "none";
+      document.body.style.overflow="hidden";
+
       var options = {
-        strings: ['',' <h1>V-Care Multi-Speciality Hospital</h1><br><p>All services are provided.</p>'],
+        strings: ['',' <h1>Welcome to V-Care.</h1>'],
         typeSpeed: 50
       };
       
       var typed = new Typed('#loader', options);
       setTimeout(()=>{
-        console.log("hi");
         document.getElementById('loader').style.display = "none";
+        $('.typed-cursor').hide();
+        document.getElementById('hdr').style.display = "block";
         $("body").addClass("active");
-      },6000);
+        document.body.style.overflow="auto";
+      },3000);
 
     })
   }
