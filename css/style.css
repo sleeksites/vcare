@@ -61,6 +61,7 @@ ul, li {
 	overflow: hidden;
 	position: relative;
 }
+
 body.active #Banner .logo {
 	opacity: 1;
 	top: 40%;

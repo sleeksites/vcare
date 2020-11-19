@@ -25,11 +25,21 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/custom-responsive-style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
-
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/plugin-active.js"></script>
 </head>
 <body>
+
+  <div id="loader" style="display: none; top: 40%; left: 30%; position: fixed; z-index: 10000;">
+
+  </div>
+
+
+  <div id="mainBody">
+
+  
+
   <header>
     <div class="mobile-logo">
     <a href=""><img src="images/vcarelogo.jpeg"></a>
@@ -241,5 +251,18 @@
   <i class="fa fa-heart" style="color: red;" aria-hidden="true"></i> by 
   <a href="https://sleeksites.in/" target="_blank" style="color:royalblue; text-decoration: none;">SleekSites</a>
 </div>
+
+</div>
+
 </body>
 </html>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", ()=> {
+setTimeout(()=>{
+  console.log("hi");
+  document.getElementById('loader').style.display = "none";
+  document.getElementById('mainBody').style.display = "block";
+},3000);
+});
+</script> -->

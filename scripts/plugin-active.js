@@ -24,7 +24,20 @@ $(document).ready(function() {
   });
   if ($(window).width() > 991) {
     $(window).on("load", function (e) {
-      $("body").addClass("active");
+
+      document.getElementById('loader').style.display = "block";
+      var options = {
+        strings: ['',' <h1>V-Care Multi-Speciality Hospital</h1><br><p>All services are provided.</p>'],
+        typeSpeed: 50
+      };
+      
+      var typed = new Typed('#loader', options);
+      setTimeout(()=>{
+        console.log("hi");
+        document.getElementById('loader').style.display = "none";
+        $("body").addClass("active");
+      },6000);
+
     })
   }
 });
