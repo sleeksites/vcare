@@ -236,11 +236,15 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) and (max-width: 1024px){
+	#Banner {
+		width: 0;
+		height: 68vh;
+	}
 	#Banner .blacksection::before {
 		width: 1200px;
 	}
 	#Banner h1 {
-		font-size: 60px;
+		font-size: 40px;
 	}
 	#OurWork .each-work {
 		width: 30.6%;
@@ -253,5 +257,12 @@
 	}
 	#Testimonials .testi-wrapper .each-testi {
 		width: 31%;
+	}
+}
+
+
+@media screen and (max-width: 992px){
+	#Banner h1 {
+		color: black;
 	}
 }
