@@ -34,31 +34,43 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/plugin-active.js"></script>
+<style type="text/css">
+  blockquote {
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+  blockquote h3:before { 
+  content: open-quote;
+  font-weight: bold;
+  font-size:50px;
+  color:black;
+  } 
+  blockquote h3:after { 
+  content: close-quote;
+  font-weight: bold;
+  font-size:50px;
+  color:black;
+  }
+
+</style>
 </head>
 <body>
 <script>
   //Reset scroll top
-
 history.scrollRestoration = "manual";
-
 $(window).on('beforeunload', function(){
   $('body').hide();
       $(window).scrollTop(0);
 });
 </script>
-  <div id="loader" style="display: none; top: 40%; left: 40%; position: fixed; z-index: 10000;">
+<div id="loader" style="display: none; top: 40%; left: 40%; position: fixed; z-index: 10000;">
+</div>
 
-  </div>
-
-
-  <div id="mainBody">
-
-  
-
+<div id="mainBody">
   <header id="hdr">
     <div class="mobile-logo">
-    <a href=""><img src="images/vcarelogo.png" height="150"></a>
-  </div>
+      <a href=""><img src="images/vcarelogo.png" height="150"></a>
+    </div>
   <a class="menu-toggle rounded" href="#">
     <i class="fa fa-bars"></i>
   </a>
@@ -78,6 +90,9 @@ $(window).on('beforeunload', function(){
       </li>
       <li class="sidebar-nav-item">
         <a class="smooth-scroll" href="#OurWork">Clients</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Director">Director's Desk</a>
       </li>
       <!-- <li class="sidebar-nav-item">
         <a class="smooth-scroll" href="#OurBlog">Our Blog</a>
@@ -279,44 +294,44 @@ $(window).on('beforeunload', function(){
 </section>
 
 <section id="Gallery" style="margin: 2%;">
-<div class="container">
-  <h1 class="font-weight-bolder" style="text-align: center !important;">Gallery</h1>
-  <br>
-  <div class="row no-gutters gallery"> 
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/01.jpg">
-        <img src="images/thumb/01.jpg" width="100%" height="auto" alt="" title="Image 1">
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/02.jpg" >
-        <img src="images/thumb/02.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 2">
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/03.jpg">
-        <img src="images/thumb/03.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 3">
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/04.jpg">
-        <img src="images/thumb/04.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 4">
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/04.jpg">
-        <img src="images/thumb/05.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 4">
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-10 col-12">
-      <a href="images/thumb/04.jpg">
-        <img src="images/thumb/06.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 4">
-      </a>
+  <div class="container">
+    <h1 class="font-weight-bolder" style="text-align: center !important;">Gallery</h1>
+    <br>
+    <div class="row no-gutters gallery"> 
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/01.jpg">
+            <img src="images/thumb/01.jpg" width="100%" height="auto" alt="" title="Image 1">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/02.jpg" >
+            <img src="images/thumb/02.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 2">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/03.jpg">
+            <img src="images/thumb/03.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 3">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/04.jpg">
+            <img src="images/thumb/04.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 4">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/05.jpg">
+            <img src="images/thumb/05.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 5">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+          <a href="images/thumb/06.jpg">
+            <img src="images/thumb/06.jpg" class="img-thumbnail" width="100%" height="auto" alt="" title="Image 6">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-</div>
 </section>
 
 <section id="OurWork">
@@ -354,6 +369,26 @@ $(window).on('beforeunload', function(){
     </div>
   </div>
 </section> 
+
+<section id="Director">
+  <div class="container mt-5">
+    <h2 class="font-weight-bolder" style="text-align: center;">From Director's Desk</h2>
+    <div class="row ">
+        <div class="col-md-6 col-lg-2 col-xl p-3 m-3">
+        <blockquote>
+            <h3 style="text-align: justify;font-size: 20px;font-family: lato;line-height: 30px;"><i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC making it over 2000 years old.Lorem ipsum dolor sit amet. </i>
+            </h3>
+        </blockquote>
+        </div>
+        <div class="col-md-6 col-lg-2 col-xl p-3 m-3">
+           <img src="https://easyshifts.com/easyshifts_files/images/people/dummy-person.png" class="float-right">
+        </div>
+    </div>
+    <br>
+</div>  
+</section>
+
+
 <section id="map" style="text-align: center;">
 <div class="container-width" style="margin: 1%;">
   <h1>How to reach us</h1>
