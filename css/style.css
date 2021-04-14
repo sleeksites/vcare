@@ -327,7 +327,7 @@ a, a:hover, a:focus, a:active {
   -moz-box-shadow: 0 0 10px #cccccc;
   -webkit-box-shadow: 0 0 10px #cccccc;
   -o-box-shadow: 0 0 10px #cccccc;
-  box-shadow: 0 0 10px #cccccc;
+  box-shadow: 2px 2px 10px #cccccc;
   overflow: hidden;
   padding: 30px;
   position: relative;
