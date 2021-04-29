@@ -39,7 +39,7 @@ $(document).ready(function () {
 
       var options = {
         strings: ["", " <h1>Welcome to V-Care.</h1>"],
-        typeSpeed: 10,
+        typeSpeed: 30,
       };
 
       var typed = new Typed("#loader", options);
@@ -49,7 +49,7 @@ $(document).ready(function () {
         document.getElementById("hdr").style.display = "block";
         $("body").addClass("active");
         document.body.style.overflow = "auto";
-      }, 500);
+      }, 1300);
     });
   }
 });
